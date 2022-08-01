@@ -26,10 +26,12 @@ define HasMoney = 1
 define Lunch = 0
 define Mineralka = 0
 define SutrakActive = 1
+define PeroCisty = False
 define olda = Character("Olda")
 define Event1 = 0
 define Event2 = 0
 define marek = Character("Marek Vašut")
+define pavouk = Character("Teplý Pavouk")
 
 define SittingWith = 0 
 
@@ -964,7 +966,7 @@ label den3:
                     $FifiLove +=1
                     fifi "Jsem ráda, že tě to zajímá, sháníme podpisy na petici za zavedení zákona, který potrestá vězením každého, kdo řekne slovo na N."
                     menu:
-                        "Co kdyby sis radši sehnala nějaké feny?":
+                        "Co kdyby sis radši sehnala nějaké feny? ty negře":
                             fifi "Trhni si nohou debile"
                             $FifiLove -=5
                             $LevLove +=1
@@ -978,6 +980,97 @@ label den3:
                     $FifiLove -=2
                     fifi "no dobře no..."
     scene background2
+    me "Sakra, já si zapoměnř propisku."
+    menu:
+        "od koho si pujčim propisku??"
+        "od Zagura":
+            show zagur_2
+            with dissolve
+            zagur "Tak ty si chceš vypůjčit propisku?"
+            show zagur_3
+            hide zagur_2
+            with dissolve
+            zagur "Co kdyby sis radši vypůjčil nějaké feny!"
+            menu:
+                "Proč myslíš, že hraju tuhle hru?":
+                    hide zagur_3
+                    with dissolve
+                "Debile.":
+                    hide zagur_3
+                    with dissolve
+        "od Pavouka":
+            scene background2
+    show pavouk_2
+    with dissolve
+    pavouk "takže propisku jo?"
+    show pavouk_3
+    hide pavouk_2
+    with dissolve
+    pavouk "a nevadí že je ožužlaná?"
+    menu:
+        "já si ji očistím":
+            $ PeroCisty = True
+            scene background2
+        "Tím líp >:)":
+            $ PeroCisty = False
+            scene background2
+
+    if SittingWith == 1:
+        show krtek
+        hide pavouk_3
+        with dissolve
+        krtkus "Tak ty sis půjčil péro od pavouka?"
+        krtkus "Pavouk je frajer, díky němu vznikl ten vtipobraz co jsem ti ukazoval první den, pamatuješ?"
+        menu:
+            "No jistě, Vel-ký Krtkus, velký Krtkus velký Krtkus!":
+                krtkus "Ano, je to tak humorné!"
+            "Já to zapomněr :lebka: ":
+                krtkus "Jsi asi jediný člověk na planetě, kdo si ten chytlavý, skvělý text nezapamatoval, vem si svoje alzheimer prášky."
+            "Ty myslíš tu nevtipnou píseň? I já bych napsal lepší":
+                krtkus "Ty jsi horší než ta Fifina, fakt."
+                $KrtkusLove = KrtkusLove - 5
+        krtkus "Mimochodem, zapomněl jsem si dneska taky propisku, takže doufám, že mi ji budeš půjčovat."
+        menu:
+            "Tobě vždycky kamaráde retarde":
+                krtkus "Díky Brácho"
+                $KrtkusLove = KrtkusLove + 1
+            "Vždyť ty zápisky stejně nepotřebuješ, naučíš se z učebnice.":
+                krtkus "dobře, ale pokud se něco stane, jde to na tebe."
+    elif SittingWith == 2:
+        show myskus
+        hide pavouk_3
+        with dissolve
+        if PeroCisty == True:
+            mis "Jé, ty máš růžové pero, to je hezké"
+            menu:
+                "Musel jsem si ho půjčit":
+                    mis "Aha, tak to nic"
+                    $MisLove = MisLove - 2
+                "Ano, moje oblíbená barva je růžová":
+                    mis "Neobvyklé, ale líbivé"
+                    $MisLove = MisLove + 2
+        else:
+            mis "Hezké pero, nějaké vlhké"
+            menu:
+                "No jo, teďka je období monzunů":
+                    mis "když to říkáš"
+                "Půjčil jsem si ho od Pavouka":
+                    mis "On je takový hodný, že?"
+                    $MisLove = MisLove + 2
+                "Máš pravdu, mé pero je skutečně vlhké":
+                    mis "Hihi, ty jsi tak vtipný"
+                    $MisLove = MisLove + 6
+    elif SittingWith == 3:
+        show fifi
+        hide pavouk_3
+        with dissolve
+        
+
+    
+
+
+
+    me "negr"
                     
     
     
