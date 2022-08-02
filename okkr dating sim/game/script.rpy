@@ -44,7 +44,7 @@ label den1:
     scene black
     play sound "<from 0 to 2>audio/Alarm-ringtone.mp3" volume 0.4
     
-    me "O né já příjdu na můj první den školy pozdě!"
+    me "O né, nesmím přijít na můj první den školy pozdě!"
     me "Musím rychle!"
 
     scene background1
@@ -151,8 +151,8 @@ label den1:
                 zoom 2
                 xpos 100
                 ypos 230
-        lev "Vidím že sis zvolil dobře, právě sis sedl s nejlepším průvodcem historií této školy, věděl jsi že náš učitel má testikulární rakovinu? ano je to tak, jednou postnul jeded meme kterej byl takovej cancer až z toho dostal opravdou rakovinu!"
-    info "Hodina Chemie s panem Waldemarem bílím byla docela nuda, no prostě chemie"
+        lev "Vidím že sis zvolil dobře, právě sis sedl s nejlepším průvodcem historií této školy, věděl jsi že náš učitel má testikulární rakovinu? ano je to tak, jednou postnul jeden meme kterej byl takovej cancer až z toho dostal opravdou rakovinu!"
+    info "Hodina Chemie s panem Waldemarem bílým byla docela nuda, no prostě chemie"
     info "bylo velice zvláštní že měl celou dobu takovou divnou barvu, asi je nemocný..."
     info "a nebo že by to byla ta rakovina jak o ní povídali? idk jestli se tomu dá věřit"
     play sound "<from 0 to 3>audio/School-bell.mp3" volume 0.25
@@ -176,7 +176,7 @@ label den1:
                 zoom 0.8
             $ HasMoney = 0
 
-        "Soráč ale když ti je dám, tak tvoje máma nedostane zaplaceno":
+        "Soráč, ale když ti je dám, tak tvoje máma nedostane zaplaceno":
             $ SutrakLove = SutrakLove - 1
             hide sutrak_2
             show sutrak_1 at right:
@@ -200,7 +200,7 @@ label den1:
         "Ravioli":
             if HasMoney == 0:
                 babica "to je za připlatek 30kč"
-                me "ale já mám jen na klasicekj oběd"
+                me "ale já mám jen na klasicej oběd"
                 babica "tak to si musíš vzít knedlo vepřo zelo..."
             else:
                 babica "Vepřo Knedlo Zelo je lepší ale dobře no"
@@ -243,7 +243,7 @@ label den1:
             mis "Jasně."
             menu:
                 "Jak ti chutná?":
-                    mis "je to dobrý, ale radši nechtěl vědět, jak to v té kuchyni vypadá."
+                    mis "je to dobrý, ale radši nechtěj vědět, jak to v té kuchyni vypadá."
                 "Vaří tu dobře?":
                     mis "Levný, ale dobrý jídlo. Jen si nikdy nedávej koláč, budou v něm vlasy."
         "Za Fifi":
@@ -255,7 +255,7 @@ label den1:
             if FifiLove < 2:
                 fifi "vážně tu chceš sedět?"
             else:
-                fifi "jestli chceš tak se tady klidně posaď"
+                fifi "jestli chceš, tak se tady klidně posaď"
             if Lunch == 2:
                 fifi "ty jsi taky vegan? tak to je úžasný!!! konečně nejsem ve škole jediná. Z těch kteří dokážou sníst maso je mi špatně, pokud teda nejsou populární ovšem, potom jim to prominu, každý ma nějakou chybičku že ano "
                 menu:
