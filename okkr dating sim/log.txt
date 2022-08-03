@@ -1,319 +1,34 @@
-Thu Mar 24 18:18:01 2022
+Wed Aug  3 20:01:52 2022
 Windows-10-10.0.19041
-Ren'Py 7.4.11.2266
+Ren'Py 7.5.1.22070801
  
 
-Bootstrap to the start of init.init took 0.10s
-Early init took 0.00s
-Loader init took 0.09s
-Loading error handling took 0.06s
-Loading script took 0.70s
-Loading save slot metadata. took 0.15s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.14s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\oldah\\AppData\\Roaming/RenPy/backups\\okkr dating sim':
-Dump and make backups. took 0.13s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.05s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.28s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.01s
-Save screen analysis took 0.04s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.18s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 1050/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 456.71'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 785, in script
-    if FifiLove => 7:
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 2274, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: invalid syntax (script.rpy, line 785)
-
-While running game code:
-  File "game/script.rpy", line 785, in script
-    if FifiLove => 7:
-SyntaxError: invalid syntax (script.rpy, line 785)
-Screen sizes: virtual=(1920, 1080) physical=(1440, 877) drawable=(1440, 877)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 73.30s
+Bootstrap to the start of init.init took 0.13s
 Early init took 0.00s
 Loader init took 0.05s
-Loading error handling took 0.02s
-Loading script took 0.21s
+Loading error handling took 0.03s
+Loading script took 0.23s
 Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
+Faled to initialize steam: WindowsError(126, 'The specified module could not be found')
+Running init code took 0.11s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
-Dump and make backups. took 0.08s
+Dump and make backups. took 0.09s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.05s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.28s
+Creating interface object took 0.35s
 Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.02s
+Init translation took 0.07s
+Build styles took 0.01s
+Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.08s
+Prepare screens took 0.15s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.06s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 1050/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 456.71'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 877) drawable=(1440, 877)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 785, in script
-    if FifiLove => 7:
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 2274, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: invalid syntax (script.rpy, line 785)
-
-While running game code:
-  File "game/script.rpy", line 785, in script
-    if FifiLove => 7:
-SyntaxError: invalid syntax (script.rpy, line 785)
-Resetting cache.
-Bootstrap to the start of init.init took 81.85s
-Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.02s
-Loading script took 0.39s
-Loading save slot metadata. took 0.02s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.06s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\oldah\\AppData\\Roaming/RenPy/backups\\okkr dating sim':
-Dump and make backups. took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.05s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.25s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.08s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.06s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 1050/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 456.71'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 877) drawable=(1440, 877)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 251.18s
-Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.02s
-Loading script took 0.35s
-Loading save slot metadata. took 0.02s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 949: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    menu:
-    ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 0.38s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 1050/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 456.71'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 877) drawable=(1440, 877)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 304.40s
-Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.02s
-Loading script took 0.40s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.07s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\oldah\\AppData\\Roaming/RenPy/backups\\okkr dating sim':
-Dump and make backups. took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.03s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.25s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.04s
-Prepare screens took 0.07s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.06s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 1050/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 456.71'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 877) drawable=(1440, 877)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-
-Full traceback:
-  File "game/script.rpy", line 826, in script
-    if LevLove => 6:
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 2274, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: invalid syntax (script.rpy, line 826)
-
-While running game code:
-  File "game/script.rpy", line 826, in script
-    if LevLove => 6:
-SyntaxError: invalid syntax (script.rpy, line 826)
-Resetting cache.
-Bootstrap to the start of init.init took 380.16s
-Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.02s
-Loading script took 0.43s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.06s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\oldah\\AppData\\Roaming/RenPy/backups\\okkr dating sim':
-Dump and make backups. took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.06s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.26s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.06s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 1050/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 456.71'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 877) drawable=(1440, 877)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s

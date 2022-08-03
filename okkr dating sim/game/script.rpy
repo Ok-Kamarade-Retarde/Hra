@@ -638,7 +638,7 @@ label den2:
             "Jo, dokonce se mi ani nezdálo nic o někom ze třídy, nebo tak…":
                 krtkus "Zvláštní, neříkáš to moc přesvědčivě."
     if SittingWith == 2:
-        show mis
+        show miskus
         mis "Ahoj, doufám že sis po včerejšku pořádně odpočinul."
         menu:
             "Ne… musel jsem na tebe pořád myslet.":
@@ -748,7 +748,7 @@ label den2:
         "s kým si sednu na oběd?"
         "Krtkus":
             scene background4
-            show krtkus at left
+            show krtek at left
             if Event1 == 2:
                 krtkus "Kámo Mega dík za tu radu zachránil si mě"
                 menu:
