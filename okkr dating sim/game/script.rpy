@@ -1,8 +1,8 @@
-# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
+define KrtkusOut = 0
+define FifiOut = 0
+define ZlevOut = 0
+define MysOut = 0
+define day = 1
 define krtkus = Character("Velký Krtkus")
 define me = Character("já")
 define mis = Character("Myškuska")
@@ -295,322 +295,17 @@ label den1:
     menu:
         "s kým půjdu ven?"
         "S krtkusem":
-            $ KrtkusLove = KrtkusLove + 1
-            show krtek at left
-            if HasMoney == 0:
-                krtkus "Hej viděl jsem jak tě Šutrák Otravoval před školou"
-                me "Jo obral mě o peníze na oběd"
-                krtkus "viděl jsem... Co kdybych ti od něj pomohl?"
-                menu:
-                    "Fakt bys to pro mě udělal?":
-                        krtkus "Co bych byl za kamaráda kdybych ti od něj nepomohl"
-                        $ SutrakActive = 0
-                    "To bych po tobě nemohl chtít":
-                        krtkus "No jak myslíš..."
-            if HasMoney == 1:
-                krtkus "Slyšel jsem jak si před obědem urazil Šutráka"
-                me "pořádně jsem mu to nandal co?"
-                krtkus "Fakt si mu to nandal ale teď si na tebe dá extra pozor...Co kdybych ti od něj pomohl?"
-                menu:
-                    "Fakt bys to pro mě udělal?":
-                        krtkus "Co bych byl za kamaráda kdybych ti od něj nepomohl"
-                        $ SutrakActive = 0
-                    "To bych po tobě nemohl chtít":
-                        krtkus "No jak myslíš..."
-            krtkus "A teď je čas na pomstu!!"
-            menu:
-                "Neber to zas tak vážně, tolik se toho přece nestalo.":
-                    $KrtkusLove = KrtkusLove - 2
-                "pomstu? To je něco podle mého gusta!":
-                    $KrtkusLove = KrtkusLove + 2
-            krtkus "Jde o ředitele Vašuta, minulý rok dělal všechno proto abych neprošel. Takže mu to oplatíme na jeho fáru."
-            scene background6
-            show krtek at left:
-                zoom 1.25
-            menu:
-                "To je zmetek, jdeme na to!":
-                    $Event1 = 1
-                    krtkus "Tady máš šroubovák, propícháme mu gumy."
-                    krtkus "teď rychle pryč"
-                    scene background7
-                    show krtek at left:
-                        zoom 1.25
-                    krtkus "Tady to je moje zašívárna, hele, někdo tady něco nechal… (drží dvě stříkačky)"
-                    krtkus "Zkusíme to??"
-                    menu:
-                        "No tak to je jasný he he he":
-                            $KrtkusLove = KrtkusLove + 2
-                            krtkus "tak jdeme na to"
-                            play movie "background8.ogv"
-                            krtkus "Tak to byla jízda"
-                            me "to jo"
-                            krtkus "musíme rychle domů aby nás tady někdo neviděl..."
-                            stop movie
-                        "S drogama si radši začínat nebudu":
-                            $KrtkusLove = KrtkusLove - 2
-                            krtkus "no ok no, s tebou není žádná sranda..."
-                "nemyslím že to je dobrý nápad...":
-                    $ KrtkusLove = KrtkusLove - 2
-                    krtkus "No jak chceš, klidně si jdi já tě k tomu nepotřebuju"
-                
-            
+            $ KrtkusOut = KrtkusOut + 1
+            jump KrtkusOut1
         "S Myškusem":
-            show myskus:
-                zoom 1.25
-                ypos 200
-
-            me "chceš doprvodit domů?"
-            mis "Ty mě chceš doprovodit? To je… milé."
-            menu:
-                "doufám že ti to nevadí":
-                    $ MisLove = MisLove + 1
-                    mis "Vůbec ne, hele, už mi jede šalina desítka."
-                "Jeden den ve škole přece není dost na to, abych tě lépe poznal.":
-                    $ MisLove = MisLove - 1
-                    mis "Um… T-to zní… H-hele, už nám jede šalina desítka."
-            scene background9
-            show myskus:
-                zoom 1.25
-                ypos 200
-            mis "Moc často nakupovat nechodím, ale teď nějaké nové oblečení potřebuji. Tady mají dámskou sekci. "
-            menu:
-                "Dobře.":
-                    mis "Co myslíš, slušelo by mi to?"
-                    menu:
-                        "Jo asi si vezmu to samé.":
-                            $ MisLove = MisLove + 1
-                            mis "A pro koho?"
-                            menu:
-                                "No, pro mojí mámu, to je snad jasné, ne? Vůbec si to neberu pro sebe nebo tak…":
-                                    mis "Aha, to mě mohlo napadnout."
-                                "Pro sebe, rád si oblékám dámské oblečení, je pohodlné a pěkně přilnavé.":
-                                    mis "O-opravdu? T-to je fajn…"
-                                    $ Event2 = 1
-                                    $ MisLove = MisLove + 5
-                        "No, nevím jestli ti to úplně sedne.":
-                            $ MisLove = MisLove - 1
-                            mis "Jak to myslíš?"
-                            menu:
-                                "Vlastně nic, je to tvoje volba":
-                                    mis "N-no dobrá."
-                                "No, možná v tom budeš vypadat trochu tlustě.":
-                                    $ MisLove = MisLove - 5
-                                    mis "Myškuska: C-COŽE?! T-ty sprosťáku! V-víš co? Radši už jdi."
-                "Já vím, taky tady nakupuju":
-                    mis "Jako tady v H&Mku?"
-                    me "No, přímo v dámské."
-                    $ MisLove = MisLove + 1
-                    mis "To kupuješ pro svou mamku? Nebo snad sestru?"
-                    menu:
-                        "A-ano, ano, jistě, vůbec to není pro mě, já totiž vůbec nikdy nenosím dámské oblečení, není to součástí mého módního stylu, to vůbec ne.":
-                            mis "Když to říkáš… škoda."
-                        "No, kupuju to vlastně pro sebe, rád nosím dámské.":
-                            $ Event2 = 1
-                            $ MisLove = MisLove + 5
-                            mis "No, hi hi, to máme něco společného. A musím říct, že ti to i sedne."
-                            me "Ano, v H&M nakoupíte módu, domácí vybavení, dětské oblečení a dekorativní kosmetiku. Nabízí kvalitu za nejlepší cenu a udržitelným způsobem. Toto reklamní sdělení není sponzorováno."
-                            mis "No, když to říkáš. Nicméně, jsem ráda, že je tu další H&M vychutnávač. Jsme lepší než ti sojový normiči C&A fanoušci."
-            mis "Tak, já už mám tedy vybráno."
-            menu:
-                "Fajn, uvidíme se tedy zítra, ahoj.":
-                    mis "Bylo to fajn, tak ahoj zítra."
-                "Můžu to za tebe zaplatit, jestli chceš.":
-                    $ MisLove = MisLove + 2
-                    mis "T-to bys udělal? M-moc díky, tohle ti nezapomenu."
+            $ MysOut = MysOut + 1
+            jump MyskusOut1
         "S Fifi":
-            show fifi:
-                zoom 1.25
-                ypos 300
-            fifi "co zas chceš? jít semnou ven? no dobře..."
-            fifi "co chceš dělat?"
-            menu:
-                "Je mi ctí pozvat někoho jako jsi ty na zmrzlinu, včera jsem byl u epického zmrzlináře který dělal fakt dobrou zmrzlinu, myslím že byla veganská…":
-                    fifi "veganská zmrzlina? to je moje oblíbená! nedopustila bych kvůli mě nějaká kráva takhle trpěla "
-                "No, lidi tvýho typu obvykle stejně nic nedělaj, takže… hele co to tam parkuje za dodávku?":
-                    fifi "Nevím, můžem se jít podívat."
-            scene background10
-            show fifi:
-                zoom 1.25
-                ypos 300
-            with dissolve
-            olda "Tak co to bude?"
-            fifi "dali bychom si 2 veganské zmrzliny"
-            olda "kdo za debila by si kupoval veganský zmrzliny však to je totální sračka…"
-            fifi "COŽE?"
-            menu:
-                "tak hele, když se budete chovat takhle, moc toho neprodáte.":
-                    olda " ano slyšeli jste mě, veganskou zmrzlinu vám dávat nebudu, chutná jako zmražená mrdka"
-                "No… má trochu recht.":
-                    olda " ano slyšeli jste mě, veganskou zmrzlinu vám dávat nebudu, chutná jako zmražená mrdka"
-            menu:
-                "OK, myslím, že bychom měli radši jít…":
-                    olda "Přesně, táhněte si po svým, vy odporní vegani! Tfuj"
-                    fifi "toto je nechutné, canclnu vás na hvízdu!"
-                    menu: 
-                        "Já taky!":
-                            scene background10
-                            show fifi:
-                                zoom 1.25
-                                ypos 300
-                        "Co je sakra hvízd?":
-                            scene background10
-                            show fifi:
-                                zoom 1.25
-                                ypos 300
-                    fifi "hned teď jdu napsat hvízd, vy se tady dlouho neudržíte, je mě z vás blbě"
-                    olda "lmao drž hubu, mě je jedno nějakej hvízďák"
-                    menu:
-                        "Velká Fifinko, nech toho, jenom nás ztrapňuješ":
-                            fifi "A ty? Ty odpreskni, takhle se zastávat toho vraha zvířat, co nemá veganskou zmrzlinu."
-                        "Doufám, že té tvojí kraksně někdo přestřihne brzdové hadičky!":
-                            fifi "Přesně tak!"
-                            scene background11
-                            show fifi:
-                                zoom 1.25
-                                ypos 300
-                            with dissolve
-                            fifi "Tys mu to nandal!"
-                            menu:
-                                "Vždycky využiju šanci vyhrožovat kočkoholce. Nesnáším jejich druh, hnusí se mi.":
-                                    fifi "A já si myslela, že to děláš ve jménu veganství, a on je to zločin z nenávisti."
-                                "Nesnáším tyto neuznavače veganství.":
-                                    fifi "Cítím to stejně"
-                "Toto je absurdní, máme právo na tu zmrzlinu, toto je rasistické, vy urážíte menšiny!!!":
-                    olda "neptal jsem se + drž hubu retarde"
-                    menu:
-                        "To si odskáčeš! Kdyby tady nebyli lidi, tak už máš koule ve stroji na ledovou tříšť.":
-                            olda "Ty šašku, nic na mě nezkoušej, ať už tě tu nevidím!"
-                            scene background11
-                            show fifi:
-                                zoom 1.25
-                                ypos 300
-                            with dissolve
-                            fifi "Páni, ty jsi mu to natřel!"
-                            menu:
-                                "Nenávidím kočkoholky, tfuj, takovej póvl.":
-                                    fifi "A já si myslela, že to děláš ve jménu veganství, a on je to zločin z nenávisti."
-                                "Nesnáším tyto neuznavače veganství.":
-                                    fifi "cítím to stejně"
-                        "Bohužel, na to se nedá fakt nic smysluplného namítnout.":
-                            olda "Byl jsi poroštěn, a teď, padejte."
-                            scene background11
-                            show fifi:
-                                zoom 1.25
-                                ypos 300
-                            with dissolve
-                            fifi "no mohl ses tam snažit víc."
-                            menu:
-                                "Příště si ho podám.":
-                                    scene background11
-                                    show fifi:
-                                        zoom 1.25
-                                        ypos 300
-                                "Je mi to líto, ale já prostě nedokážu být hnusnej na kočkoholky.":
-                                    scene background11
-                                    show fifi:
-                                        zoom 1.25
-                                        ypos 300
-        "S Zlvem":
-            show lev:
-                zoom 2
-                ypos 300
-            lev "Hele chlapáku, moje spižírna je tak nějak prázdná. Jestli v ní nechceš skončit svázanej tak ti doporučuju jít se mnou do alboše doplnit zásoby."
-            menu:
-                "Jako kdyby jsem měl na výběr…":
-                    lev "Tak trošku hejbni řití. Nechceš mě poznat hladového."
-                "Taky si tam něco čapnu. Doplnit zásoby se vždycky hodí.":
-                    lev "Za svoje, {b}%(player_name)s {/b}. Já tam za tebe nebudu platit ani halíř."
-                    if HasMoney == 1:
-                        me "Jasňačka že mam peníze. Nečekám, že mi tady někdo bude utírat řiť, to je jasný."
-                        lev "Výborně. Vidim že začínáš chápat jak to tady chodí. "
-                        $ LevLove = LevLove + 1
-                    else:
-                        me "No peníze už nemam…"
-                        lev "A za co si myslíš že tam prodávaj? Za přídělový lístky?"
-                        $ LevLove = LevLove - 1
-                    lev "Pojďme tedy. Albert je tudy o tři ulice dál."
-                    scene background12:
-                        zoom 4
-                    show lev:
-                        zoom 2
-                        ypos 300
-                    with dissolve
-                    lev "Ty dveře jim blbnou už nějakou dobu. Za poslední půlrok rozdrtily dva lidi. Máš štěstí že to povolilo."
-                    lev "No nic, teďka k věci. Já si du koupit nějaký uzeniny, jestli se chceš dneska večer vrátit domu tak mi skoč pro balík minerálek, měly by bejt ve třetím regálu od prava."
-                    lev "Vem mi ty saguaro lesní plody."
-                    menu:
-                        "Už tam jdu":
-                            lev "Si blbej? V albertě přece saguaro neprodávaj! Vyber tam nějakou podle sebe. A hni sebou!"
-                        "Saguaro? Myslim že sme ve špatný prodejně…":
-                            lev "Heheh… jenom sem tě zkoušel, jestli dáváš pozor. Dojdi tam vybrat nějakou podle sebe."
-                            me "dobrá, za chvíli sem u pokladen."
-                    hide lev
-                    show zagur
-                    with dissolve
-                    menu:
-                        "Ahoj, my jsme spolu ještě ve třídě nemluvili, jsem {b}%(player_name)s {/b}.":
-                            zagur "OK, já jsem Zagur. Hele, dávej bacha, mám podezření, že jsou ve zdech."
-                            menu:
-                                "Uuuuh, dobrá, ehm, můžu se zeptat, kde tu najdu minerálky?":
-                                    zagur "jasný, je to hned tady, není zač."
-                                "Kdo je ve zdech?":
-                                    zagur "Ve škole, něco… něco žije ve zdech."
-                                    menu: 
-                                        "proč myslíš?":
-                                            zagur "Slyším to, jak to tam chodí, NĚCO JE VE ZDECH! Sleduje nás."
-                                            menu:
-                                                "OK, OK, dobře, věřím ti, hlavně klid.":
-                                                    zagur "Jo mimochodem, minerálky jsou tady za rohem, slyšel jsem, jak se o tom se Zlvem bavíte. Není zač."
-                                                "Už bych radši šel, nevíš, kde jsou tu minerálky?":
-                                                    zagur "Jasný, hned tady za rohem."
-                                                "Dobře, ehm, nevíš kde jsou tady minerálky? Já jsem tu prvně.":
-                                                    zagur "Hned tady za rohem, není zač."
-                        "Zdravím, kudy se prosím dostanu k minerálkám?":
-                            zagur "Bacha! Ta věc, co je ve zdech… určitě ovládá ty dveře tady… Na co že jsi se ptal?"
-                            menu:
-                                "Jaká věc ve zdech?":
-                                    zagur "Žije ve zdech, ve škole ve zdech, a manipuluje těma nebezpečnýma dvěřima tady."
-                                    menu:
-                                        "Díky za radu. Ještě bych ale poTřeboval vědět, kde tu mají minerálky.":
-                                            zagur "Jasně, hned tady za rohem."
-                                        "Ehm, radši půjdu.":
-                                            zagur "Dobře, slyšel jsem jak se bavíte s zlvem, k minerálkám tudy. Ale měj oči na šťopkách."
-                                "Na minerálky.":
-                                    zagur "Zagur: Jistě, jsou hned tady."
-                    scene background13:
-                        zoom 4
-                    menu:
-                        "vzít poděbradku":
-                            $ Mineralka = 1
-                        "vzít gemerku":
-                            $ Mineralka = 2
-                    scene background12:
-                        zoom 4
-                    show lev:
-                        zoom 2
-                        ypos 300
-                    with dissolve
-                    me "Vidim že jdu právě v čas."
-                    lev "Ano, jdeš. Jenom nemůžu najít svojí peněženku…"
-                    menu: 
-                        "Klidně ti to zaplatím":
-                            if HasMoney == 0:
-                                lev "Však jsi mi říkal že nemáš žádný peníze..."
-                            else:
-                                lev "Fakt? Díky, ale s timhle přístupem moc dlouho nevydržíš. Budu to brát jako dar :trolak:" 
-                                $LevLove = LevLove + 1
-                        "*nic nedělat a čekat až ji najde*":
-                            $LevLove = LevLove + 0
-                    lev "tak jakou jsi vybral?"
-                    if Mineralka == 1:
-                        lev "Hm, česká Poděbradka… dobrá volba."
-                        $LevLove = LevLove + 2
-                    if Mineralka == 2:
-                        lev "Slovenská gemerka? Má vtipnej název, ale je ze Slovenska. Myslíš si že mi říkaj “ČESKÝ zlev” jen tak pro prdel?"
-                        $LevLove = LevLove - 2
-                    lev " No, každopádně sme tady hotovi. Myslim že můžeš bejt rád že se vrátíš po svých domu- jinak by tě tlačil někdo jinej na vozíku."
-                    $LevLove = LevLove + 1
-
+            $ FifiOut = FifiOut + 1
+            jump FifiOut1
+        "Se Zlvem":
+            $ ZlevOut = ZlevOut + 1
+            jump ZlevOut1
 jump den2
 
 label den2:
@@ -1071,8 +766,353 @@ label den3:
 
 
     me "negr"
-                    
-    
-    
+label KrtkusOut1:
+    $ KrtkusLove = KrtkusLove + 1
+    show krtek at left
+    if HasMoney == 0:
+        krtkus "Hej viděl jsem jak tě Šutrák Otravoval před školou"
+        me "Jo obral mě o peníze na oběd"
+        krtkus "viděl jsem... Co kdybych ti od něj pomohl?"
+        menu:
+            "Fakt bys to pro mě udělal?":
+                krtkus "Co bych byl za kamaráda kdybych ti od něj nepomohl"
+                $ SutrakActive = 0
+            "To bych po tobě nemohl chtít":
+                krtkus "No jak myslíš..."
+    if HasMoney == 1:
+        krtkus "Slyšel jsem jak si před obědem urazil Šutráka"
+        me "pořádně jsem mu to nandal co?"
+        krtkus "Fakt si mu to nandal ale teď si na tebe dá extra pozor...Co kdybych ti od něj pomohl?"
+        menu:
+            "Fakt bys to pro mě udělal?":
+                krtkus "Co bych byl za kamaráda kdybych ti od něj nepomohl"
+                $ SutrakActive = 0
+            "To bych po tobě nemohl chtít":
+                krtkus "No jak myslíš..."
+    krtkus "A teď je čas na pomstu!!"
+    menu:
+        "Neber to zas tak vážně, tolik se toho přece nestalo.":
+            $KrtkusLove = KrtkusLove - 2
+        "pomstu? To je něco podle mého gusta!":
+            $KrtkusLove = KrtkusLove + 2
+    krtkus "Jde o ředitele Vašuta, minulý rok dělal všechno proto abych neprošel. Takže mu to oplatíme na jeho fáru."
+    scene background6
+    show krtek at left:
+        zoom 1.25
+    menu:
+        "To je zmetek, jdeme na to!":
+            $Event1 = 1
+            krtkus "Tady máš šroubovák, propícháme mu gumy."
+            krtkus "teď rychle pryč"
+            scene background7
+            show krtek at left:
+                zoom 1.25
+            krtkus "Tady to je moje zašívárna, hele, někdo tady něco nechal… (drží dvě stříkačky)"
+            krtkus "Zkusíme to??"
+            menu:
+                "No tak to je jasný he he he":
+                    $KrtkusLove = KrtkusLove + 2
+                    krtkus "tak jdeme na to"
+                    play movie "background8.ogv"
+                    krtkus "Tak to byla jízda"
+                    me "to jo"
+                    krtkus "musíme rychle domů aby nás tady někdo neviděl..."
+                    stop movie
+                    $ day = day + 1
+                    $ KrtkusOut = KrtkusOut + 1
+                    jump DenDecider
+                "S drogama si radši začínat nebudu":
+                    $KrtkusLove = KrtkusLove - 2
+                    krtkus "no ok no, s tebou není žádná sranda..."
+                    $ day = day + 1
+                    $ KrtkusOut = KrtkusOut + 1
+                    jump DenDecider
+        "nemyslím že to je dobrý nápad...":
+            $ KrtkusLove = KrtkusLove - 2
+            krtkus "No jak chceš, klidně si jdi já tě k tomu nepotřebuju"
+            $ day = day + 1
+            $ KrtkusOut = KrtkusOut + 1
+            jump DenDecider
 
-    
+label MyskusOut1:
+    show myskus:
+        zoom 1.25
+        ypos 200
+
+    me "chceš doprvodit domů?"
+    mis "Ty mě chceš doprovodit? To je… milé."
+    menu:
+        "doufám že ti to nevadí":
+            $ MisLove = MisLove + 1
+            mis "Vůbec ne, hele, už mi jede šalina desítka."
+        "Jeden den ve škole přece není dost na to, abych tě lépe poznal.":
+            $ MisLove = MisLove - 1
+            mis "Um… T-to zní… H-hele, už nám jede šalina desítka."
+    scene background9
+    show myskus:
+        zoom 1.25
+        ypos 200
+    mis "Moc často nakupovat nechodím, ale teď nějaké nové oblečení potřebuji. Tady mají dámskou sekci. "
+    menu:
+        "Dobře.":
+            mis "Co myslíš, slušelo by mi to?"
+            menu:
+                "Jo asi si vezmu to samé.":
+                    $ MisLove = MisLove + 1
+                    mis "A pro koho?"
+                    menu:
+                        "No, pro mojí mámu, to je snad jasné, ne? Vůbec si to neberu pro sebe nebo tak…":
+                            mis "Aha, to mě mohlo napadnout."
+                        "Pro sebe, rád si oblékám dámské oblečení, je pohodlné a pěkně přilnavé.":
+                            mis "O-opravdu? T-to je fajn…"
+                            $ Event2 = 1
+                            $ MisLove = MisLove + 5
+                "No, nevím jestli ti to úplně sedne.":
+                    $ MisLove = MisLove - 1
+                    mis "Jak to myslíš?"
+                    menu:
+                        "Vlastně nic, je to tvoje volba":
+                            mis "N-no dobrá."
+                        "No, možná v tom budeš vypadat trochu tlustě.":
+                            $ MisLove = MisLove - 5
+                            mis "Myškuska: C-COŽE?! T-ty sprosťáku! V-víš co? Radši už jdi."
+                            $ day = day + 1
+                            jump DenDecider
+        "Já vím, taky tady nakupuju":
+            mis "Jako tady v H&Mku?"
+            me "No, přímo v dámské."
+            $ MisLove = MisLove + 1
+            mis "To kupuješ pro svou mamku? Nebo snad sestru?"
+            menu:
+                "A-ano, ano, jistě, vůbec to není pro mě, já totiž vůbec nikdy nenosím dámské oblečení, není to součástí mého módního stylu, to vůbec ne.":
+                    mis "Když to říkáš… škoda."
+                "No, kupuju to vlastně pro sebe, rád nosím dámské.":
+                    $ Event2 = 1
+                    $ MisLove = MisLove + 5
+                    mis "No, hi hi, to máme něco společného. A musím říct, že ti to i sedne."
+                    me "Ano, v H&M nakoupíte módu, domácí vybavení, dětské oblečení a dekorativní kosmetiku. Nabízí kvalitu za nejlepší cenu a udržitelným způsobem. Toto reklamní sdělení není sponzorováno."
+                    mis "No, když to říkáš. Nicméně, jsem ráda, že je tu další H&M vychutnávač. Jsme lepší než ti sojový normiči C&A fanoušci."
+    mis "Tak, já už mám tedy vybráno."
+    menu:
+        "Fajn, uvidíme se tedy zítra, ahoj.":
+            mis "Bylo to fajn, tak ahoj zítra."
+            $ day = day + 1
+            jump DenDecider
+        "Můžu to za tebe zaplatit, jestli chceš.":
+            $ MisLove = MisLove + 2
+            mis "T-to bys udělal? M-moc díky, tohle ti nezapomenu."
+            $ day = day + 1
+            jump DenDecider
+
+label FifiOut1:
+    show fifi:
+        zoom 1.25
+        ypos 300
+    fifi "co zas chceš? jít semnou ven? no dobře..."
+    fifi "co chceš dělat?"
+    menu:
+        "Je mi ctí pozvat někoho jako jsi ty na zmrzlinu, včera jsem byl u epického zmrzlináře který dělal fakt dobrou zmrzlinu, myslím že byla veganská…":
+            fifi "veganská zmrzlina? to je moje oblíbená! nedopustila bych kvůli mě nějaká kráva takhle trpěla "
+        "No, lidi tvýho typu obvykle stejně nic nedělaj, takže… hele co to tam parkuje za dodávku?":
+            fifi "Nevím, můžem se jít podívat."
+    scene background10
+    show fifi:
+        zoom 1.25
+        ypos 300
+    with dissolve
+    olda "Tak co to bude?"
+    fifi "dali bychom si 2 veganské zmrzliny"
+    olda "kdo za debila by si kupoval veganský zmrzliny však to je totální sračka…"
+    fifi "COŽE?"
+    menu:
+        "tak hele, když se budete chovat takhle, moc toho neprodáte.":
+            olda " ano slyšeli jste mě, veganskou zmrzlinu vám dávat nebudu, chutná jako zmražená mrdka"
+        "No… má trochu recht.":
+            olda " ano slyšeli jste mě, veganskou zmrzlinu vám dávat nebudu, chutná jako zmražená mrdka"
+    menu:
+        "OK, myslím, že bychom měli radši jít…":
+            olda "Přesně, táhněte si po svým, vy odporní vegani! Tfuj"
+            fifi "toto je nechutné, canclnu vás na hvízdu!"
+            menu:
+                "Já taky!":
+                    scene background10
+                    show fifi:
+                        zoom 1.25
+                        ypos 300
+                "Co je sakra hvízd?":
+                    scene background10
+                    show fifi:
+                        zoom 1.25
+                        ypos 300
+                    fifi "hned teď jdu napsat hvízd, vy se tady dlouho neudržíte, je mě z vás blbě"
+                    olda "lmao drž hubu, mě je jedno nějakej hvízďák"
+            menu:
+                "Velká Fifinko, nech toho, jenom nás ztrapňuješ":
+                    fifi "A ty? Ty odpreskni, takhle se zastávat toho vraha zvířat, co nemá veganskou zmrzlinu."
+                "Doufám, že té tvojí kraksně někdo přestřihne brzdové hadičky!":
+                    fifi "Přesně tak!"
+                    scene background11
+                    show fifi:
+                        zoom 1.25
+                        ypos 300
+                    with dissolve
+                    fifi "Tys mu to nandal!"
+                    menu:
+                        "Vždycky využiju šanci vyhrožovat kočkoholce. Nesnáším jejich druh, hnusí se mi.":
+                            fifi "A já si myslela, že to děláš ve jménu veganství, a on je to zločin z nenávisti."
+                            $ day = day + 1
+                            jump DenDecider
+                        "Nesnáším tyto neuznavače veganství.":
+                            fifi "Cítím to stejně"
+                            $ day = day + 1
+                            jump DenDecider
+        "Toto je absurdní, máme právo na tu zmrzlinu, toto je rasistické, vy urážíte menšiny!!!":
+            olda "neptal jsem se + drž hubu retarde"
+            menu:
+                "To si odskáčeš! Kdyby tady nebyli lidi, tak už máš koule ve stroji na ledovou tříšť.":
+                    olda "Ty šašku, nic na mě nezkoušej, ať už tě tu nevidím!"
+                    scene background11
+                    show fifi:
+                        zoom 1.25
+                        ypos 300
+                    with dissolve
+                    fifi "Páni, ty jsi mu to natřel!"
+                    menu:
+                        "Nenávidím kočkoholky, tfuj, takovej póvl.":
+                            fifi "A já si myslela, že to děláš ve jménu veganství, a on je to zločin z nenávisti."
+                            $ day = day + 1
+                            jump DenDecider
+                        "Nesnáším tyto neuznavače veganství.":
+                            fifi "cítím to stejně"
+                            $ day = day + 1
+                            jump DenDecider
+                "Bohužel, na to se nedá fakt nic smysluplného namítnout.":
+                    olda "Byl jsi poroštěn, a teď, padejte."
+                    scene background11
+                    show fifi:
+                        zoom 1.25
+                        ypos 300
+                    with dissolve
+                    fifi "no mohl ses tam snažit víc."
+                    menu:
+                        "Příště si ho podám.":
+                            scene background11
+                            show fifi:
+                                zoom 1.25
+                                ypos 300
+                            $ day = day + 1
+                            jump DenDecider
+                        "Je mi to líto, ale já prostě nedokážu být hnusnej na kočkoholky.":
+                            scene background11
+                            show fifi:
+                                zoom 1.25
+                                ypos 300
+                            $ day = day + 1
+                            jump DenDecider
+label ZlevOut1:
+    show lev:
+        zoom 2
+        ypos 300
+    lev "Hele chlapáku, moje spižírna je tak nějak prázdná. Jestli v ní nechceš skončit svázanej tak ti doporučuju jít se mnou do alboše doplnit zásoby."
+    menu:
+        "Jako kdyby jsem měl na výběr…":
+            lev "Tak trošku hejbni řití. Nechceš mě poznat hladového."
+        "Taky si tam něco čapnu. Doplnit zásoby se vždycky hodí.":
+            lev "Za svoje, {b}%(player_name)s {/b}. Já tam za tebe nebudu platit ani halíř."
+            if HasMoney == 1:
+                me "Jasňačka že mam peníze. Nečekám, že mi tady někdo bude utírat řiť, to je jasný."
+                lev "Výborně. Vidim že začínáš chápat jak to tady chodí. "
+                $ LevLove = LevLove + 1
+            else:
+                me "No peníze už nemam…"
+                lev "A za co si myslíš že tam prodávaj? Za přídělový lístky?"
+                $ LevLove = LevLove - 1
+            lev "Pojďme tedy. Albert je tudy o tři ulice dál."
+            scene background12:
+                zoom 4
+            show lev:
+                zoom 2
+                ypos 300
+            with dissolve
+            lev "Ty dveře jim blbnou už nějakou dobu. Za poslední půlrok rozdrtily dva lidi. Máš štěstí že to povolilo."
+            lev "No nic, teďka k věci. Já si du koupit nějaký uzeniny, jestli se chceš dneska večer vrátit domu tak mi skoč pro balík minerálek, měly by bejt ve třetím regálu od prava."
+            lev "Vem mi ty saguaro lesní plody."
+            menu:
+                "Už tam jdu":
+                    lev "Si blbej? V albertě přece saguaro neprodávaj! Vyber tam nějakou podle sebe. A hni sebou!"
+                "Saguaro? Myslim že sme ve špatný prodejně…":
+                    lev "Heheh… jenom sem tě zkoušel, jestli dáváš pozor. Dojdi tam vybrat nějakou podle sebe."
+                    me "dobrá, za chvíli sem u pokladen."
+            hide lev
+            show zagur
+            with dissolve
+            menu:
+                "Ahoj, my jsme spolu ještě ve třídě nemluvili, jsem {b}%(player_name)s {/b}.":
+                    zagur "OK, já jsem Zagur. Hele, dávej bacha, mám podezření, že jsou ve zdech."
+                    menu:
+                        "Uuuuh, dobrá, ehm, můžu se zeptat, kde tu najdu minerálky?":
+                            zagur "jasný, je to hned tady, není zač."
+                        "Kdo je ve zdech?":
+                            zagur "Ve škole, něco… něco žije ve zdech."
+                            menu:
+                                "proč myslíš?":
+                                    zagur "Slyším to, jak to tam chodí, NĚCO JE VE ZDECH! Sleduje nás."
+                                    menu:
+                                        "OK, OK, dobře, věřím ti, hlavně klid.":
+                                            zagur "Jo mimochodem, minerálky jsou tady za rohem, slyšel jsem, jak se o tom se Zlvem bavíte. Není zač."
+                                        "Už bych radši šel, nevíš, kde jsou tu minerálky?":
+                                            zagur "Jasný, hned tady za rohem."
+                                        "Dobře, ehm, nevíš kde jsou tady minerálky? Já jsem tu prvně.":
+                                            zagur "Hned tady za rohem, není zač."
+                "Zdravím, kudy se prosím dostanu k minerálkám?":
+                    zagur "Bacha! Ta věc, co je ve zdech… určitě ovládá ty dveře tady… Na co že jsi se ptal?"
+                    menu:
+                        "Jaká věc ve zdech?":
+                            zagur "Žije ve zdech, ve škole ve zdech, a manipuluje těma nebezpečnýma dvěřima tady."
+                            menu:
+                                "Díky za radu. Ještě bych ale poTřeboval vědět, kde tu mají minerálky.":
+                                    zagur "Jasně, hned tady za rohem."
+                                "Ehm, radši půjdu.":
+                                    zagur "Dobře, slyšel jsem jak se bavíte s zlvem, k minerálkám tudy. Ale měj oči na šťopkách."
+                        "Na minerálky.":
+                            zagur "Zagur: Jistě, jsou hned tady."
+            scene background13:
+                zoom 4
+            menu:
+                "vzít poděbradku":
+                    $ Mineralka = 1
+                "vzít gemerku":
+                    $ Mineralka = 2
+            scene background12:
+                zoom 4
+            show lev:
+                zoom 2
+                ypos 300
+            with dissolve
+            me "Vidim že jdu právě v čas."
+            lev "Ano, jdeš. Jenom nemůžu najít svojí peněženku…"
+            menu:
+                "Klidně ti to zaplatím":
+                    if HasMoney == 0:
+                        lev "Však jsi mi říkal že nemáš žádný peníze..."
+                    else:
+                        lev "Fakt? Díky, ale s timhle přístupem moc dlouho nevydržíš. Budu to brát jako dar :trolak:"
+                        $LevLove = LevLove + 1
+                "*nic nedělat a čekat až ji najde*":
+                    $LevLove = LevLove + 0
+            lev "tak jakou jsi vybral?"
+            if Mineralka == 1:
+                lev "Hm, česká Poděbradka… dobrá volba."
+                $LevLove = LevLove + 2
+            if Mineralka == 2:
+                lev "Slovenská gemerka? Má vtipnej název, ale je ze Slovenska. Myslíš si že mi říkaj “ČESKÝ zlev” jen tak pro prdel?"
+                $LevLove = LevLove - 2
+            lev " No, každopádně sme tady hotovi. Myslim že můžeš bejt rád že se vrátíš po svých domu- jinak by tě tlačil někdo jinej na vozíku."
+            $LevLove = LevLove + 1
+            $ day = day + 1
+            jump DenDecider
+label DenDecider:
+    if day == 2:
+        jump den2
+    elif day == 3:
+        jump den3
