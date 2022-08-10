@@ -783,6 +783,8 @@ label den3:
                             me "No docela j..."
                             fifi "Fuj a to jsem si myslela že seš docela fajn"
                             $ FifiLove = FifiLove - 4
+                        "No moment, není tohleto rasismus proti arachnickému etniku?":
+                            fifi "NO TOHLE! JÁ NEMÁM SLOV! MOJE KRYTÍ, tedy TAKOVÁ NEHORÁZNOST! Máš štěstí, že už začíná hodina."
         elif PeroCisty == False:
             Vypravec "Fifi se zhnuseně kouká na pero"
             fifi "FUJ PROČ JE TO OD SLIN!?"
@@ -790,7 +792,8 @@ label den3:
                 "FUJ ani jsem si to neuvědomil. Hned si vezmu gumové rukavice a umyju ho.":
                     me "FUJ ani jsem si to neuvědomil. Hned si vezmu gumové rukavice a umyju ho."
                     fifi "Ah ty jsi jen mentálně nepozorný jako já už jsem se lekla že si to neočistil schválně"
-                "Půjčil jsem si to od Pavouka a teď mám jeho sliny.":
+                "Půjčil jsem si to od Pavouka a teď mám jeho sliny":
+                    me "Půjčil jsem si to od Pavouka a teď mám jeho sliny, ježiš úplně z toho slintám taky *slint slint* kape to na to pero *slint*"
                     fifi "No Fuj Pavouk...asi budu zvracet..."
                     Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
                     $ FifiLove = FifiLove - 8
