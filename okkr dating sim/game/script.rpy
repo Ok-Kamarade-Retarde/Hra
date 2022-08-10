@@ -755,17 +755,45 @@ label den3:
                 "Máš pravdu, mé pero je skutečně vlhké":
                     mis "Hihi, ty jsi tak vtipný"
                     $MisLove = MisLove + 6
-    elif SittingWith == 3:
+     elif SittingWith == 3:
         show fifi
         hide pavouk_3
         with dissolve
-        
-
-    
-
-
-
-    me "negr"
+        if PeroCisty == True:
+            fifi "Jé ty sis pořídil růžové pero co se hodí k mému oblečení?"
+            menu:
+                "Ano je to dárek pro tebe":
+                    fifi "Nejspíš s ním psát nebudu ale dík"
+                    $ FifiLove = FifiLove + 2
+                    $ PavoukRespekt = PavoukRespekt - 1
+                "Ano abychom měli víc shodných barev":
+                    if Event2 == 1:
+                        fifi "No aspoň nebudeme spolu vypadat špatně"
+                        $ FifiLove = FifiLove + 2
+                    elif Event2 == 0:
+                        fifi "....No zatím se barevně shoduje jen to pero ale ok..."
+                "Ne jenom jsem si ho půjčil od Pavouka":
+                    fifi "FUJ TY S TÍM STVOŘENÍM KAMARÁDÍŠ?"
+                    menu:
+                        "No ani ne...":
+                             me "No ani n..."
+                             fifi "Fuj a to jsem si myslela že seš docela fajn"
+                             $ FifiLove = FifiLove - 2
+                        "No docela jo...":
+                            me "No docela j..."
+                            fifi "Fuj a to jsem si myslela že seš docela fajn"
+                            $ FifiLove = FifiLove - 4
+        elif PeroCisty == False:
+            Vypravec "Fifi se zhnuseně kouká na pero"
+            fifi "FUJ PROČ JE TO OD SLIN!?"
+            menu:
+                "FUJ ani jsem si to neuvědomil. Hned si vezmu gumové rukavice a umyju ho.":
+                    me "FUJ ani jsem si to neuvědomil. Hned si vezmu gumové rukavice a umyju ho."
+                    fifi "Ah ty jsi jen mentálně nepozorný jako já už jsem se lekla že si to neočistil schválně"
+                "Půjčil jsem si to od Pavouka a teď mám jeho sliny.":
+                    fifi "No Fuj Pavouk...asi budu zvracet..."
+                    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+                    $ FifiLove = FifiLove - 8
 label KrtkusOut1:
     $ KrtkusLove = KrtkusLove + 1
     show krtek at left
