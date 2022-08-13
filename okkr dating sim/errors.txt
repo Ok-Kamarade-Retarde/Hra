@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 949: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    menu:
-    ^
+File "game/script.rpy", line 758: Indentation mismatch.
 
-Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar 24 18:22:13 2022
+Ren'Py Version: Ren'Py 7.5.1.22070801
+Sat Aug 13 17:49:09 2022

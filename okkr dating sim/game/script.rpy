@@ -755,7 +755,7 @@ label den3:
                 "Máš pravdu, mé pero je skutečně vlhké":
                     mis "Hihi, ty jsi tak vtipný"
                     $MisLove = MisLove + 6
-     elif SittingWith == 3:
+    elif SittingWith == 3:
         show fifi
         hide pavouk_3
         with dissolve
@@ -786,7 +786,7 @@ label den3:
                         "No moment, není tohleto rasismus proti arachnickému etniku?":
                             fifi "NO TOHLE! JÁ NEMÁM SLOV! MOJE KRYTÍ, tedy TAKOVÁ NEHORÁZNOST! Máš štěstí, že už začíná hodina."
         elif PeroCisty == False:
-            Vypravec "Fifi se zhnuseně kouká na pero"
+            info "Fifi se zhnuseně kouká na pero"
             fifi "FUJ PROČ JE TO OD SLIN!?"
             menu:
                 "FUJ ani jsem si to neuvědomil. Hned si vezmu gumové rukavice a umyju ho.":
@@ -795,7 +795,7 @@ label den3:
                 "Půjčil jsem si to od Pavouka a teď mám jeho sliny":
                     me "Půjčil jsem si to od Pavouka a teď mám jeho sliny, ježiš úplně z toho slintám taky *slint slint* kape to na to pero *slint*"
                     fifi "No Fuj Pavouk...asi budu zvracet..."
-                    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+                    info "Fifi uteče na záchod a zbytek hodiny tam zůstane"
                     $ FifiLove = FifiLove - 8
 label KrtkusOut1:
     $ KrtkusLove = KrtkusLove + 1

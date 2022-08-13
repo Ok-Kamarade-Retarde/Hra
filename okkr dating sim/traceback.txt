@@ -1,24 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 826, in script
-    if LevLove => 6:
-SyntaxError: invalid syntax (script.rpy, line 826)
+  File "game/script.rpy", line 798, in script
+    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+Exception: Sayer 'Vypravec' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 826, in script
-    if LevLove => 6:
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 2274, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: invalid syntax (script.rpy, line 826)
+  File "game/script.rpy", line 798, in script
+    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'Vypravec' is not defined.
 
-Windows-10-10.0.19041
-Ren'Py 7.4.11.2266
+Windows-10-10.0.19041 AMD64
+Ren'Py 7.5.1.22070801
 okkr dating sim 0.2.0.01
-Thu Mar 24 18:23:48 2022
+Sat Aug 13 17:52:59 2022

@@ -1,34 +1,251 @@
-Wed Aug  3 20:01:52 2022
+Sat Aug 13 17:49:07 2022
 Windows-10-10.0.19041
 Ren'Py 7.5.1.22070801
  
 
-Bootstrap to the start of init.init took 0.13s
+Bootstrap to the start of init.init took 0.14s
+Early init took 0.00s
+Loader init took 0.13s
+Loading error handling took 0.06s
+Loading script took 0.62s
+Loading save slot metadata. took 0.58s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 758: Indentation mismatch.
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.87s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 512.96'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1438, 809) drawable=(1438, 809)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 50.27s
 Early init took 0.00s
 Loader init took 0.05s
 Loading error handling took 0.03s
+Loading script took 1.17s
+Loading save slot metadata. took 0.06s
+Loading persistent took 0.00s
+Faled to initialize steam: WindowsError(126, 'The specified module could not be found')
+ - Init at game/gui.rpy:11 took 0.77603 s.
+Running init code took 1.01s
+Loading analysis data took 0.08s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\oldah\\AppData\\Roaming/RenPy/backups\\okkr dating sim':
+Dump and make backups. took 0.16s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.18s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.02s
+Save screen analysis took 0.05s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.07s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.13s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 512.96'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1438, 809) drawable=(1438, 809)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 789, in script
+    Vypravec "Fifi se zhnuseně kouká na pero"
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'Vypravec' is not defined.
+
+While running game code:
+  File "game/script.rpy", line 789, in script
+    Vypravec "Fifi se zhnuseně kouká na pero"
+Exception: Sayer 'Vypravec' is not defined.
+Resetting cache.
+Bootstrap to the start of init.init took 175.49s
+Early init took 0.00s
+Loader init took 0.05s
+Loading error handling took 0.03s
+Loading script took 0.54s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: WindowsError(126, 'The specified module could not be found')
+Running init code took 0.07s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\oldah\\AppData\\Roaming/RenPy/backups\\okkr dating sim':
+Dump and make backups. took 0.12s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.41s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 512.96'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1438, 809) drawable=(1438, 809)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 798, in script
+    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'Vypravec' is not defined.
+
+While running game code:
+  File "game/script.rpy", line 798, in script
+    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+Exception: Sayer 'Vypravec' is not defined.
+Resetting cache.
+Bootstrap to the start of init.init took 230.66s
+Early init took 0.00s
+Loader init took 0.05s
+Loading error handling took 0.02s
 Loading script took 0.23s
 Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Faled to initialize steam: WindowsError(126, 'The specified module could not be found')
-Running init code took 0.11s
+Running init code took 0.06s
 Loading analysis data took 0.03s
 Analyze and compile ATL took 0.01s
 Index archives took 0.00s
 Dump and make backups. took 0.09s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.05s
+Initial gc. took 0.06s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.35s
+Creating interface object took 0.34s
 Cleaning stores took 0.00s
 Init translation took 0.07s
 Build styles took 0.01s
-Load screen analysis took 0.04s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.15s
+Prepare screens took 0.10s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 512.96'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1438, 809) drawable=(1438, 809)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 798, in script
+    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\oldah\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'Vypravec' is not defined.
+
+While running game code:
+  File "game/script.rpy", line 798, in script
+    Vypravec "Fifi uteče na záchod a zbytek hodiny tam zůstane"
+Exception: Sayer 'Vypravec' is not defined.
+Resetting cache.
+Bootstrap to the start of init.init took 244.52s
+Early init took 0.00s
+Loader init took 0.05s
+Loading error handling took 0.02s
+Loading script took 0.53s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: WindowsError(126, 'The specified module could not be found')
+Running init code took 0.07s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\oldah\\AppData\\Roaming/RenPy/backups\\okkr dating sim':
+Dump and make backups. took 0.11s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 512.96'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1438, 809) drawable=(1438, 809)
+Maximum texture size: 4096x4096
