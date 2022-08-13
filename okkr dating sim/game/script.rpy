@@ -32,7 +32,7 @@ define Event1 = 0
 define Event2 = 0
 define marek = Character("Marek Vašut")
 define pavouk = Character("Teplý Pavouk")
-
+define PavoukRespekt = 1
 define SittingWith = 0 
 
 label start:
